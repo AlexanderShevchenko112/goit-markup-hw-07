@@ -14,18 +14,16 @@
   justify-content: center;
   transition: background-color var(--duration) var(--function);
   fill: var(--social-color);
-}
-
-.social-icon:hover,
-.social-icon:focus {
-  background-color: var(--second-color);
+  &:hover,
+  &:focus {
+    background-color: var(--second-color);
+  }
 }
 
 .social-svg {
   transition: fill var(--duration) var(--function);
-}
-
-.social-icon:hover .social-svg,
-.social-icon:focus .social-svg {
-  fill: var(--first-color);
+  .social-icon:hover &,
+  .social-icon:focus & {
+    fill: var(--first-color);
+  }
 }

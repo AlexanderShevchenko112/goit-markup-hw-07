@@ -2,38 +2,36 @@
   border-bottom: 1px solid var(--header-border-color);
 }
 
-.header-list {
+.menu__list {
   display: flex;
   gap: 50px;
+  & .current {
+    color: var(--second-color);
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: var(--second-color);
+      bottom: -1px;
+      border-radius: 2px;
+    }
+  }
 }
 
-.header-list .header-link.current {
-  color: var(--second-color);
-}
-
-.current::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 4px;
-  background-color: var(--second-color);
-  bottom: -1px;
-  border-radius: 2px;
-}
-
-.header-list-auth {
+.menu__list-auth {
   display: flex;
   gap: 50px;
   margin-left: auto;
 }
 
-.header-flex {
+.menu__flex {
   display: flex;
   align-items: center;
 }
 
-.header-logo {
+.menu__logo {
   font-family: "Raleway";
   font-weight: 700;
   font-size: 26px;
@@ -43,7 +41,7 @@
   margin-right: 93px;
 }
 
-.logo-web {
+.menu__web {
   font-family: "Raleway";
   font-weight: 700;
   font-size: 26px;
@@ -52,7 +50,7 @@
   color: var(--second-color);
 }
 
-.header-link {
+.menu__link {
   position: relative;
   display: block;
   font-weight: 500;
@@ -63,14 +61,13 @@
   padding-top: 32px;
   padding-bottom: 32px;
   transition: color var(--duration) var(--function);
+  &:hover,
+  &:focus {
+    color: var(--second-color);
+  }
 }
 
-.header-link:hover,
-.header-link:focus {
-  color: var(--second-color);
-}
-
-.header-tel {
+.menu__tel {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -83,9 +80,13 @@
   padding-top: 32px;
   padding-bottom: 32px;
   transition: color var(--duration) var(--function);
+  &:hover,
+  &:focus {
+    color: var(--second-color);
+  }
 }
 
-.header-mail {
+.menu__mail {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -98,24 +99,18 @@
   padding-top: 32px;
   padding-bottom: 32px;
   transition: color var(--duration) var(--function);
+  &:hover,
+  &:focus {
+    color: var(--second-color);
+  }
 }
 
-.header-mail:hover,
-.header-mail:focus {
-  color: var(--second-color);
-}
-
-.envelope-icon,
-.smartphone-icon {
+.menu__mail-icon,
+.menu__tel-icon {
   fill: currentColor;
 }
 
 .smartphone:hover,
 .smartphone:focus {
   fill: var(--second-color);
-}
-
-.header-tel:hover,
-.header-tel:focus {
-  color: var(--second-color);
 }

@@ -1,4 +1,4 @@
-.clients-title {
+.brands__title {
   margin: 0 auto;
   font-weight: 700;
   font-size: 36px;
@@ -9,13 +9,13 @@
   margin-bottom: 50px;
 }
 
-.clients-list {
+.brands__list {
   display: flex;
   justify-content: center;
   gap: 30px;
 }
 
-.clients-block {
+.brands__block {
   display: flex;
   width: 170px;
   height: 92px;
@@ -25,19 +25,17 @@
   align-items: center;
   justify-content: center;
   transition: border-color var(--duration) var(--function);
+  &:hover,
+  &:focus {
+    border-color: var(--second-color);
+  }
 }
 
-.clients-icon {
+.brands__icon {
   fill: var(--social-color);
   transition: fill var(--duration) var(--function);
-}
-
-.clients-block:hover,
-.clients-block:focus {
-  border-color: var(--second-color);
-}
-
-.clients-block:hover .clients-icon,
-.clients-block:focus .clients-icon {
-  fill: var(--second-color);
+  .brands__block:hover &,
+  .brands__block:focus & {
+    fill: var(--second-color);
+  }
 }
