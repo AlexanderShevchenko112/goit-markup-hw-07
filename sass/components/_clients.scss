@@ -1,8 +1,10 @@
 .brands__title {
-  margin: 0 auto;
   font-weight: 700;
-  font-size: 36px;
-  line-height: 42px;
+  font-size: 28px;
+  @include desktop {
+    font-size: 36px;
+  }
+  line-height: 1.18;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-color);
@@ -13,11 +15,22 @@
   display: flex;
   justify-content: center;
   gap: 30px;
+  flex-wrap: wrap;
+}
+
+.brands__item {
+  width: calc((100% - 30px) / 2);
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 60px) / 3);
+    @media screen and (min-width: 1200px) {
+      width: calc((100% - 150px) / 6);
+    }
+  }
 }
 
 .brands__block {
   display: flex;
-  width: 170px;
+  width: 100%;
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;

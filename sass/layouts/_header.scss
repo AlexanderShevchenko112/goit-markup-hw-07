@@ -2,8 +2,11 @@
   border-bottom: 1px solid var(--header-border-color);
 }
 
-.menu__list {
-  display: flex;
+.header-list {
+  display: none;
+  @include tablet {
+    display: flex;
+  }
   gap: 50px;
   & .current {
     color: var(--second-color);
@@ -20,37 +23,57 @@
   }
 }
 
-.menu__list-auth {
-  display: flex;
-  gap: 50px;
+.header-list-auth {
+  display: none;
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
   margin-left: auto;
 }
 
-.menu__flex {
+.header-flex {
   display: flex;
   align-items: center;
 }
 
-.menu__logo {
+.header-logo {
   font-family: "Raleway";
   font-weight: 700;
-  font-size: 26px;
+  font-size: 24px;
+  @include desktop {
+    font-size: 26px;
+  }
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--logo-color);
   margin-right: 93px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
-.menu__web {
+.header-web {
   font-family: "Raleway";
   font-weight: 700;
-  font-size: 26px;
+  font-size: 24px;
+  @include desktop {
+    font-size: 26px;
+  }
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--second-color);
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
-.menu__link {
+.header-link {
   position: relative;
   display: block;
   font-weight: 500;
@@ -67,18 +90,20 @@
   }
 }
 
-.menu__tel {
+.header-tel {
+  @include desktop {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
   display: flex;
   gap: 10px;
   align-items: center;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   color: var(--text-color);
   text-decoration: none;
-  padding-top: 32px;
-  padding-bottom: 32px;
   transition: color var(--duration) var(--function);
   &:hover,
   &:focus {
@@ -86,18 +111,20 @@
   }
 }
 
-.menu__mail {
+.header-mail {
+  @include desktop {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
   display: flex;
   gap: 10px;
   align-items: center;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   color: var(--text-color);
   text-decoration: none;
-  padding-top: 32px;
-  padding-bottom: 32px;
   transition: color var(--duration) var(--function);
   &:hover,
   &:focus {
@@ -105,12 +132,119 @@
   }
 }
 
-.menu__mail-icon,
-.menu__tel-icon {
+.header-mail-icon,
+.header-tel-icon {
   fill: currentColor;
 }
 
 .smartphone:hover,
 .smartphone:focus {
   fill: var(--second-color);
+}
+
+.menu-open-btn {
+  @include tablet {
+    display: none;
+  }
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: transparent;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.menu-modal {
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 10px;
+  padding-bottom: 48px;
+  > .menu-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+    padding-left: 40px;
+    padding-right: 15px;
+  }
+}
+
+.menu-close-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  margin-left: auto;
+  display: block;
+}
+
+.menu-modal-link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.2px;
+  letter-spacing: 0.02em;
+  color: #212121;
+}
+.modal-tel {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.2px;
+  letter-spacing: 0.02em;
+  color: var(--second-color);
+}
+.modal-mail {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.17px;
+  letter-spacing: 0.02em;
+  color: #757575;
+}
+
+.menu-modal-item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.modal-auth-tel {
+  margin-bottom: 32px;
+}
+
+.modal-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu-social-list {
+  display: flex;
+  margin-top: 64px;
+}
+
+.menu-social-item:not(:last-child) {
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.menu-social-link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: var(--second-color);
+  padding: 0 10px;
+}
+
+.first-link {
+  padding-left: 0;
+}
+
+.menu-modal-list {
+  & .current {
+    color: var(--second-color);
+  }
 }
